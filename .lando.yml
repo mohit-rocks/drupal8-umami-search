@@ -1,0 +1,38 @@
+name: search-api-demo
+recipe: pantheon
+config:
+  framework: drupal8
+  site: search-api-demo
+  id: 5b38a3a4-9a09-4406-a062-89029f8fa50f
+  xdebug: true
+  index: false
+  edge: false
+  cache: true
+events:
+  pre-pull:
+    - terminus alpha:aliases
+services:
+  appserver:
+    build:
+      - composer install
+tooling:
+  drush:
+    service: appserver
+    cmd: /app/vendor/bin/drush
+  phplint:
+    service: appserver
+    cmd: /app/vendor/bin/phplint
+  phpcs:
+    service: appserver
+    cmd: /app/vendor/bin/phpcs
+  phpunit:
+    service: appserver
+    cmd: /app/vendor/bin/phpunit
+  deploy-code:
+    service: appserver
+    cmd: /app/scripts/deploy_code.sh
+    description: Build the project artifact from sources and deploy it to Pantheon
+  deploy:
+    service: appserver
+    cmd: /app/scripts/deploy.sh
+    description: Deploy the build and run database and configuration updates

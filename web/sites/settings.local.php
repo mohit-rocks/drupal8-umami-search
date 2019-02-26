@@ -129,3 +129,5 @@ $settings['rebuild_access'] = TRUE;
  * directory.
  */
 $settings['skip_permissions_hardening'] = TRUE;
+
+$base_url = "http://searchapidemo.lndo.site:8000";
