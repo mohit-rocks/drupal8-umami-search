@@ -1,0 +1,23 @@
+uuid: 8c496a05-c49b-4886-ada8-93bf7e529fa9
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.preparation_time_range
+  module:
+    - facets
+  theme:
+    - umami_search
+id: preparation_time_range
+theme: umami_search
+region: sidebar
+weight: 0
+provider: null
+plugin: 'facet_block:preparation_time_range'
+settings:
+  id: 'facet_block:preparation_time_range'
+  label: 'Preparation time Range'
+  provider: facets
+  label_display: visible
+  block_id: preparation_time_range
+visibility: {  }

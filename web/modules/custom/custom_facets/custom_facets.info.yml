@@ -1,0 +1,7 @@
+name: 'Custom Facets'
+type: module
+description: 'Custom facets for search.'
+core: 8.x
+package: 'Custom'
+dependencies:
+  - facets

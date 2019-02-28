@@ -1,0 +1,68 @@
+uuid: 4f1caf06-6b84-4428-a98b-f8ecc4c1cf13
+langcode: en
+status: true
+dependencies:
+  config:
+    - search_api.index.umami_search_index
+    - views.view.search
+  module:
+    - search_api
+id: cooking_time
+name: 'Cooking time'
+url_alias: cooking_time
+weight: 0
+min_count: 1
+show_only_one_result: true
+field_identifier: field_cooking_time
+facet_source_id: 'search_api:views_page__search__page_1'
+widget:
+  type: custom_range_text_widget
+  config:
+    prefix: ''
+query_operator: or
+use_hierarchy: false
+expand_hierarchy: false
+enable_parent_when_child_gets_disabled: true
+hard_limit: 0
+exclude: false
+only_visible_when_facet_source_is_visible: true
+processor_configs:
+  active_widget_order:
+    processor_id: active_widget_order
+    weights:
+      sort: 20
+    settings:
+      sort: DESC
+  count_widget_order:
+    processor_id: count_widget_order
+    weights:
+      sort: 30
+    settings:
+      sort: DESC
+  display_value_widget_order:
+    processor_id: display_value_widget_order
+    weights:
+      sort: 40
+    settings:
+      sort: ASC
+  range_slider:
+    processor_id: range_slider
+    weights:
+      pre_query: 60
+      post_query: 60
+      build: 20
+    settings: {  }
+  slider:
+    processor_id: slider
+    weights:
+      post_query: 60
+    settings: {  }
+  url_processor_handler:
+    processor_id: url_processor_handler
+    weights:
+      pre_query: 50
+      build: 15
+    settings: {  }
+empty_behavior:
+  behavior: none
+show_title: false

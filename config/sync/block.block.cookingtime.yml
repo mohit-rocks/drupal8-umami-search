@@ -1,0 +1,23 @@
+uuid: 87b06cf0-a508-40c4-9e33-7c6c4abae8be
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.cooking_time
+  module:
+    - facets
+  theme:
+    - umami_search
+id: cookingtime
+theme: umami_search
+region: sidebar
+weight: 0
+provider: null
+plugin: 'facet_block:cooking_time'
+settings:
+  id: 'facet_block:cooking_time'
+  label: 'Cooking time'
+  provider: facets
+  label_display: visible
+  block_id: cookingtime
+visibility: {  }
